@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul</title>
+    <style>
+        body{
+            position: absolute;
+            left: 25%;
+            top: 25%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to my calculator</h1>
+    <form>
+        <input type="text" placeholder="Number" id="number1"/>
+        <input type="text" placeholder="Operation" id="op"/>
+        <input type="text" placeholder="Number" id="number2"/>
+    </form>
+    <br>
+    <button type="submit" onclick="calcul()">Calcul</button>
+    <br>
+    <p id="demo"></p>
+
+<script>
+function calcul(){
+    var x = document.getElementById("number1").value;
+    var o = document.getElementById("op").value;
+    var y = document.getElementById("number2").value;
+    var result = document.getElementById("demo").value;
+    x = parseInt(x);
+    y = parseInt(y);
+    switch(o) {
+   case '+':
+   result = x + y;
+      break;
+   case '-':
+    result = x - y;
+      break;
+   case '*':
+    result = x * y;
+      break;
+   case '/':
+   result = x / y;
+      break;
+   default:
+    result = 'No inputs';
+      break;
+}
+document.getElementById("demo").innerHTML = result;
+}
+    
+</script>
+</body>
+</html>
